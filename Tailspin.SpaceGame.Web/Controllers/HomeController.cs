@@ -11,6 +11,7 @@ namespace TailSpin.SpaceGame.Web.Controllers
 {
     public class HomeController : Controller
     {
+        //New pull-request    
         // High score repository.
         private readonly IDocumentDBRepository<Score> _scoreRepository;
         // User profile repository.
@@ -105,7 +106,7 @@ namespace TailSpin.SpaceGame.Web.Controllers
 
                 return View(vm);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return View(vm);
             }
@@ -119,7 +120,7 @@ namespace TailSpin.SpaceGame.Web.Controllers
                 // Fetch the user profile with the given identifier.
                 return View(new ProfileViewModel { Profile = await _profileRespository.GetItemAsync(id), Rank = rank });
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return RedirectToAction("/");
             }
